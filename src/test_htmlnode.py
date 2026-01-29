@@ -1,7 +1,7 @@
 import unittest
 from htmlnode import HTMLNode
 
-class TestTextNode(unittest.TestCase):
+class TestHTMLNode(unittest.TestCase):
     def test_eq(self):
         node = HTMLNode("a", "Anchor text", None, {"target":"link to website", "target2": "link to person"})
         node2 = HTMLNode("a", "Anchor text", None, {"target":"link to website"})
