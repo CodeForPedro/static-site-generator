@@ -1,8 +1,10 @@
-from textnode import TextNode, TextType
+
+from htmlnode import HTMLNode
 
 def main():
 
-    Node = TextNode("Test", TextType.LINK, "https://docs.python.org/3/tutorial/classes.html")
-    print(Node)
+    node = HTMLNode("a", "Anchor text", None, {"target":"link to website", "target2": "link to person"})
+    print(repr(node))
+
 
 main()
