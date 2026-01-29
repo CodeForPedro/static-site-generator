@@ -27,3 +27,19 @@ class HTMLNode():
     def __eq__(self, other):
         if self.tag == other.tag and self.value == other.value and self.children == other.children and self.props == other.props:
             return True
+        
+# Class represents a single HTML tag with no children
+class LeafNode(HTMLNode):
+    def __init__(self, tag, value, props=None):
+        super().__init__(tag=tag, value=value, props=props)
+
+    def to_html(self):
+        if not self.value:
+            raise ValueError("all leaf nodes must have a value")
+            return
+        if self.tag == None:
+            return f"{self.value}"
+        return f"<{self.tag}>{self.value}</{self.tag}>"
+            
+    def __repr__(self):
+        return f"LeafNode(tag={self.tag}, value={self.value}, props={self.props})"
